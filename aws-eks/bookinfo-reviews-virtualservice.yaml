@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews.bookinfo.svc.cluster.local
+  http:
+    - match:
+        - headers:
+            end-user:
+              exact: TTT
+      route:
+        - destination:
+            host: reviews.bookinfo.global
+            subset: v2
+          weight: 50
+        - destination:
+            host: reviews.bookinfo.global
+            subset: v3
+          weight: 50
+    - route:
+        - destination:
+            host: reviews.bookinfo.svc.cluster.local
+            subset: v1

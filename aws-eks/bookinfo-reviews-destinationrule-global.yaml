@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: reviews-global
+spec:
+  host: reviews.bookinfo.global
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+  subsets:
+    - name: v2
+      labels:
+        cluster: cluster2
+    - name: v3
+      labels:
+        cluster: cluster2
