@@ -15,3 +15,9 @@ https://logz.io/blog/istio-linkerd-envoy-comparison-service-meshes/
 
 https://servicemesh.es/
 https://medium.com/@ihcsim/linkerd-2-0-and-istio-performance-benchmark-df290101c2bb
+
+TODO
+
+https://devopstrain.pro/istio
+https://istio.io/blog/2020/multi-cluster-mesh-automation/
+https://github.com/istio-ecosystem/admiral
